@@ -1,106 +1,46 @@
 <script setup>
-import { vShow } from 'vue';
-
+import {RouterLink} from 'vue-router'
 
 </script>
 
 <template>
-    <div class="wrapper">
-        <div class="ayomi">
-            <h2>Ayomiposi</h2>
-        </div>
-        <div class="bg-timer">
-            <div class="header-text">
-                <h1> All we do is <span>count</span></h1>
-                <h2>Keep track of changes in your app</h2>
-                <div class="counter">
-                    <RouterLink to="/counter" class="counter-text">counter</RouterLink>
-                </div>
+    <div class="h-auto wrapper flex gap-4 flex-col justify-between items-start ">
+        <nav><h1 class="text-2xl text-black font-extrabold px-6"></h1></nav>
+       <div class="grid grid-cols-1  px-3 py-5">
+            <div class="col-span-2 md:col-span-1">
+                <header class="flex flex-col justify-center items-start px-3 gap-4">
+                    <h1 class="text-blue-500 text-4xl font-bold">No one stops you from counting</h1>
+                    <p class="font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere est blanditiis maiores minus maxime at similique. In, consequuntur excepturi praesentium modi aut autem facere voluptatibus!
+                    </p>
+                    <RouterLink to="/counter">
+                        <button class="px-3 py-2 bg-blue-500 text-white rounded-md border border-blue-500"> See Counter</button>
+                    </RouterLink>
+                </header>
             </div>
+
+            <div class="col-span-1 hidden md:block">
+
+            </div>
+       </div>
+       <div>
+        <div class="w-10/12 px-2 rounded-md py-3 shadow-slate-200 shadow-md mb-4 mx-auto flex flex-col justify-center gap-4 items-center">
+            <h1 class="text-2xl text-blue-500 font-bold"> Counter App</h1>
+            <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ducimus voluptatibus maiores eos quia voluptas corrupti ipsa nostrum commodi ratione, natus quos eveniet dicta totam quod? Facilis, impedit consequuntur dolorem recusandae fuga ipsa? Illum, quaerat.</p>
+           <RouterLink to="/counter"> <button class="px-3 py-2 bg-blue-500 text-white rounded-md border border-blue-500"> See in action</button> </RouterLink>
         </div>
     </div>
+    </div>
+
+    
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&display=swap');
 .wrapper{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.4rem 0;
-    align-items: center;
-    background-color: black;
-    color:white
+    background-image: url('../assets/bg.jpeg');
+    background-size:cover;
+    font-family: 'Alegreya', serif;
 }
 
-.ayomi {
-    text-align: start;
-    width: 100vw;
-    padding:5px 2rem;
-}
-.bg-timer{
-    background-image: url('../assets/timer.jpg' );
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.header-text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    padding: 10px;
-    width: 90vw;
-    height: 60vh;
-    margin: auto;
-}
-.header-text h1{
-    width: 40%;
-    font-size: 40px;
-    font-weight: 800;
 
-}
-span{
-    color: blue;
-    background: rgba(0, 0, 0, 0.7);
-}
-.header-text h2{
-    color: lightgray;
-    background: rgba(0, 0, 0, 0.7);
-    background-clip: border-box;
-}
-.counter{
-    border: 2px solid red;
-    color: white;
-    width: 50vw;
-    height: 3rem;
-    padding: 5px;
-    text-align: center;
-    border-radius: 7px;
-}
-.counter .counter-text{
-    color:white;
-    font-size: 28px;
-    font-weight: 700;
-    text-decoration: none;
-    font-family:'Alegreya', serif;;
-    text-transform: capitalize;
-}
-@media (min-width: 768px){
-    .wrapper{
-        justify-content: space-between;
-        padding-bottom:5rem;
-    }
-    .header-text{
-    }
-    .counter {
-        width: 20vw;
-        transform: scale(0.98);
-        transition: all .5s ease;
-    }
-
-    .counter:hover{
-        transform: scale(1);
-        border: 1px solid red;
-    }
-}
 </style>

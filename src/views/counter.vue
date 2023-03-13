@@ -7,130 +7,41 @@ const {increment,decrement,reset,setValue,number} = useCounter(num)
 </script>
 
 <template>
-    <div class="counter">
-        <h1>Counter Page</h1> 
-        <div class="input">
-            <input type="text" class="" placeholder="set value" v-model="num" />
-            <button @click="setValue(num)">Add</button>
+    <div class="h-screen counter w-full flex flex-col gap-5 justify-center items-center">
+        <h1 class="text-2xl font-bold text-blue-500 ">Counter Page</h1> 
+        <div class="">
+            <input type="text" class=" border border-sltae-200 rounded-md h-10 py-4 outline-none px-3 shadow-md shadow-slate-200" placeholder="set value" v-model="num" />
+            <button  @click="setValue(num)" class="bg-blue-500 text-white border border-blue-500 px-3 py-3 rounded-md font-extrabold text-xl">Add</button>
         </div>
         
-        <div class="number">
-            <h1> {{ number }}</h1>
+        <div class="">
+            <h1 class="text-4xl font-bold text-blue-500"> {{ number }}</h1>
         </div>
         
         <div>
-            <div class="functions">
-                    <button @click="decrement" class="-">Decrement</button>
-                    <button @click="reset" class="reset">Reset</button>
-                    <button @click="increment" class="-">Increment</button>
+            <div class="flex justify-center items-center gap-5">
+                    <button @click="decrement" class="bg-blue-500 text-white px-2 rounded-ms  py-3 text-xl font-bold">Minus</button>
+                    <button @click="reset" class="bg-red-500 text-white px-2 rounded-ms  py-3 text-xl font-bold">Reset</button>
+                    <button @click="increment" class="bg-blue-500 text-white px-2 rounded-ms  py-3 text-xl font-bold">Add</button>
             </div>
         </div> 
 
-        <div class="home">
-            <router-link to='/' class="home-text">
-                Return Home
+            <router-link to='/' class="mt-7" >
+                <button class="px-3 py-2 bg-green-500 text-white rounded-md border border-blue-500">
+                    Return Home
+                </button>
             </router-link>
-        </div>
     </div>
 </template>
 
 <style scoped>
 
     .counter{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin:auto;
-        padding:2rem;
-        background-color: black;
-        color: white;
-    }
-    .input input{
-        height: 30px;        
-        border-radius: 5px;
-        border: 1px solid gray;
-        margin-right: 2px;
-    }
-    .input{
-        margin-top: 3rem;
-    }
-    .input button{
-        height: 30px;
-        width: 70px;
-        text-align: center;
-        background-color: green;
-        color:white;
-        font-weight: bolder;
-        font-size: 18px;
-        font-family:  'Alegreya', serif;
-        padding: 5px;
-        border: 1px solid gray ;
-    }
-    .number{
-        height: 100px;
-        width: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color:white;
-        margin: 2rem 0;
-        font-weight: 500;
-        font-size: 28px;
-    }
-.functions{
-display: flex;
-justify-content: space-between;
-width:90vw;
-align-items: center;
-gap: 1rem;
-margin-top: 1.3rem;
-}
-.functions button{
-    padding: 10px;
-    border-radius: 7px;
-    background-color: green;
-    color:white;
-    font-weight: 700;
-    font-size: 20px;
-    border: 1px solid green;
-    outline: none;
-    font-family: 'Alegreya', serif;
-}
-.functions .reset{
-    background-color: red;
-}
-.home{
-    border: 2px solid white;
-    color: white;
-    width: 50vw;
-    height: 3rem;
-    padding: 5px;
-    text-align: center;
-    border-radius: 7px;
-    margin-top: 4rem;
-}
-.home .home-text{
-    color:white;
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: none;
+    background-image: url('../assets/bg.jpeg');
+    background-size:cover;
     font-family: 'Alegreya', serif;
 
-}
-@media (min-width: 768px){
-    .counter{
-        width: 70vw;
-        height: 90vh;
-        margin-top: 2em;
     }
-    .functions{
-        width: 30vw;
-    }
-    .home{
-        width: 25vw;
-    }
-}
+    
+
 </style>
