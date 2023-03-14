@@ -2,7 +2,7 @@ import { createStore } from "vuex";
 
 export const store = createStore({
     state:{
-        number: 1
+        number: 0
     },
     mutations: {
         increment(state){
