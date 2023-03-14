@@ -1,11 +1,11 @@
 <script setup>
-  import Home from './views/Home.vue';
   import {RouterView} from 'vue-router'
-
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
   <div>
     <RouterView />
+    <Footer/>
   </div>
 </template>

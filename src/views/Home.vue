@@ -1,60 +1,83 @@
 <script setup>
 import {RouterLink} from 'vue-router'
-import img from '../assets/png.png'
+import Button from '../components/Button.vue'
+import Img from '../assets/girl.png'
+
+
 </script>
 
 <template>
-    <div class="h-screen md:h-screen wrapper flex gap-4 flex-col justify-between items-start ">
-        <nav><h1 class="text-2xl text-black font-extrabold px-6"></h1></nav>
-       <div class="grid grid-cols-2  px-3 py-5">
-            <div class="col-span-2 md:col-span-1">
-                <header class="flex flex-col justify-center items-start px-3 gap-4">
-                    <h1 class="text-blue-500 text-4xl font-bold">No one stops you from counting</h1>
-                    <p class="font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere est blanditiis maiores minus maxime at similique. In, consequuntur excepturi praesentium modi aut autem facere voluptatibus!
-                    </p>
-                    <div class="hidden md:block">
-                        <h1 class="text-blue-500 text-4xl font-bold">Get to see my counter developed with Vue</h1>
-                    <p class="font-light"> A very simple app that has a host of dependable functionalities
-                    </p>
-                    <ul class="ml-10 mt-4 ">
-                        <li class="text-xl">Increment</li>
-                        <li class="text-xl">Decrement</li>
-                        <li class="text-xl">Reset counter Value</li>
+    <div class="h-screen wrapper  h-auto  px-5 ">
+        <nav class="mt-3">
+            <h2 class="font-extrabold text-2xl "> counter app </h2>
+        </nav>
+
+        <main class="w-full  mt-10  h-auto mb-10">
+            <header data-aos="zoom-in"  class="w-full grid grid-cols-2 ">
+                <div class="col-span-2 md:col-span-1  flex-vertical  py-4">
+                    <h1 class="w-9/12 h1">
+                        A better way to build counter apps
+                    </h1>
+                    <p class="text-gray-500 w-10/12">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam velit illo harum. Inventore aut rerum dolorem est, tempore sunt culpa?
+                  </p>
+                  <RouterLink to="/counter">
+                      <Button text="counter" class="btn" />
+                  </RouterLink>
+                </div>
+                <div class="col-span-1  hidden md:block">
+                    <img :src='Img' alt='girl smiling' class='img' />
+                </div>
+            </header>
+
+
+            <div class="grid grid-cols-3 mt-20 gap-3 md:gap-1 h-80 py-3" data-aos-duration="900" data-aos="fade-in">
+                <div class="col-span-3 md:col-span-1 shadow-md shadow-slate-200 rounded-md px-3 py-4 flex-vertical">
+                    <h2 class="text-xl font-bold">WHat you will see</h2>
+                    <ul class="w-10/12 mx-auto ">
+                        <li>Easy to use counter</li>
+                        <li class="my-2">Implemented functionalities in a composable</li>
+                        <li>State management with VueX</li>
                     </ul>
-
-                    <h2 class="text-2xl mt-2">...elegance in the making</h2>
-                    </div>
                     <RouterLink to="/counter">
-                        <button class="px-3 py-2 bg-blue-500 text-white rounded-md border border-blue-500"> See Counter</button>
+                        <Button text="Explore" class="btn" />
                     </RouterLink>
-                </header>
+                </div>
+                <div class="col-span-3 md:col-span-1 shadow-md shadow-slate-200 rounded-md px-3 py-4 flex-vertical">
+                    <h2 class="text-xl font-bold">WHat you will see</h2>
+                    <ul class="w-10/12 mx-auto ">
+                        <li>Easy to use counter</li>
+                        <li class="my-2">Implemented functionalities in a composable</li>
+                        <li>State management with VueX</li>
+                    </ul>
+                    <RouterLink to="/counter">
+                        <Button text="Explore" class="btn" />
+                    </RouterLink>
+                </div>
+                <div class="col-span-3 md:col-span-1 shadow-md shadow-slate-200 rounded-md px-3 py-4 flex-vertical">
+                    <h2 class="text-xl font-bold">WHat you will see</h2>
+                    <ul class="w-10/12 mx-auto ">
+                        <li>Easy to use counter</li>
+                        <li class="my-2">Implemented functionalities in a composable</li>
+                        <li>State management with VueX</li>
+                    </ul>
+                    <RouterLink to="/counter">
+                        <Button text="Explore" class="btn" />
+                    </RouterLink>
+                </div>
             </div>
-
-            <div class="col-span-1 png hidden md:block">
-                <img :src="img" alt="png image" />
-            </div>
-       </div>
-       <div>
-        <div class="w-10/12 px-2 rounded-md py-3 shadow-slate-200 shadow-md mb-4 mx-auto flex flex-col justify-center gap-4 items-center">
-            <h1 class="text-2xl text-blue-500 font-bold"> Counter App</h1>
-            <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ducimus voluptatibus maiores eos quia voluptas corrupti ipsa nostrum commodi ratione, natus quos eveniet dicta totam quod? Facilis, impedit consequuntur dolorem recusandae fuga ipsa? Illum, quaerat.</p>
-           <RouterLink to="/counter"> <button class="px-3 py-2 bg-blue-500 text-white rounded-md border border-blue-500"> See in action</button> </RouterLink>
-        </div>
+        </main>
     </div>
-    </div>
-
-    
 </template>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&display=swap');
 .wrapper{
-    background-image: url('../assets/bg.jpeg');
-    background-size:cover;
     font-family: 'Alegreya', serif;
 }
-.png{
-
+.img{
+    width: 500px;
+    height: 600px;
 }
 
 </style>

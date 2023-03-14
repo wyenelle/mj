@@ -1,9 +1,17 @@
 <script setup>
 import useCounter from '../composable/useCount.js'
-import {ref} from 'vue'
+import {useState} from 'vuex-composition-helpers/dist'
+import { useStore } from 'vuex';
 
+
+const store = useStore()
+const {number} = useState(['number'])
+console.log(number.value)
+
+// v-model updates this variable
 let num = ''
-const {increment,decrement,reset,setValue,number} = useCounter(num)
+
+const {increment,decrement,reset,setValue} = useCounter(num,store)
 </script>
 
 <template>
@@ -11,7 +19,7 @@ const {increment,decrement,reset,setValue,number} = useCounter(num)
         <h1 class="text-4xl font-bold text-blue-500 ">Counter Page</h1> 
         <div class="">
             <input type="text" class=" border border-sltae-200 rounded-md h-10 py-4 outline-none px-3 shadow-md shadow-slate-200" placeholder="set value" v-model="num" />
-            <button  @click="setValue(num)" class="bg-blue-500 text-white border border-blue-500 px-3 py-3 rounded-md font-extrabold text-xl">Add</button>
+            <button @click="setValue(num)" class="bg-blue-500 text-white border border-blue-500 px-3 py-3 rounded-md font-extrabold text-xl">Add</button>
         </div>
         
         <div class="">
@@ -20,9 +28,9 @@ const {increment,decrement,reset,setValue,number} = useCounter(num)
         
         <div>
             <div class="flex justify-center items-center gap-5">
-                    <button @click="decrement" class="bg-blue-500 text-white px-2 rounded-ms  py-3 text-xl font-bold">Minus</button>
-                    <button @click="reset" class="bg-red-500 text-white px-2 rounded-ms  py-3 text-xl font-bold">Reset</button>
-                    <button @click="increment" class="bg-blue-500 text-white px-2 rounded-ms  py-3 text-xl font-bold">Add</button>
+                    <button @click="decrement()" class="bg-blue-500 text-white px-2 rounded-ms  py-3 text-xl font-bold">Minus</button>
+                    <button @click="reset()" class="bg-red-500 text-white px-2 rounded-ms  py-3 text-xl font-bold">Reset</button>
+                    <button @click="increment()" class="bg-blue-500 text-white px-2 rounded-ms  py-3 text-xl font-bold">Add</button>
             </div>
         </div> 
 
