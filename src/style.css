@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,10 +15,10 @@
         @apply flex justify-center items-center gap-3
     }
     .flex-vertical{
-        @apply flex flex-col justify-around items-start gap-3 md:justify-center md:gap-5
+        @apply flex flex-col justify-around items-start gap-5 md:justify-center md:gap-5
     }
     .h1{
-        @apply font-bold text-4xl 
+        @apply font-extrabold text-5xl 
     }
 }
 
@@ -25,7 +27,7 @@
     padding: 0;
     margin: 0;
 }
-h1,h2,h3{
-    font-family: 'Alegreya', serif;
+h1,h2,h3,button{
+    font-family: 'Climate Crisis', cursive;
 
 }

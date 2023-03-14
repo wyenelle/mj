@@ -15,10 +15,10 @@ const {increment,decrement,reset,setValue} = useCounter(num,store)
 </script>
 
 <template>
-    <div class="h-screen counter w-full flex flex-col gap-5 justify-center items-center">
+    <div class="h-screen counter w-full flex flex-col gap-5 justify-center bg-black text-white items-center">
         <h1 class="text-4xl font-bold text-blue-500 ">Counter Page</h1> 
         <div class="">
-            <input type="text" class=" border border-sltae-200 rounded-md h-10 py-4 outline-none px-3 shadow-md shadow-slate-200" placeholder="set value" v-model="num" />
+            <input type="text" class=" border text-black border-sltae-200 rounded-md h-10 py-6 outline-none px-3 shadow-md shadow-slate-200" placeholder="set value" v-model="num" />
             <button @click="setValue(num)" class="bg-blue-500 text-white border border-blue-500 px-3 py-3 rounded-md font-extrabold text-xl">Add</button>
         </div>
         
@@ -45,9 +45,7 @@ const {increment,decrement,reset,setValue} = useCounter(num,store)
 <style scoped>
 
     .counter{
-    background-image: url('../assets/bg.jpeg');
-    background-size:cover;
-    font-family: 'Alegreya', serif;
+    
 
     }
     
