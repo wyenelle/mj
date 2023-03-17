@@ -17,7 +17,7 @@
         @apply flex flex-col justify-evenly items-start 
     }
     .h1{
-        @apply font-bold text-4xl 
+        @apply font-extrabold text-5xl 
     }
 }
 
